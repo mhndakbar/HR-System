@@ -1,0 +1,31 @@
+<div id="<%= dom_id team %>">
+  <p>
+    <strong>Name:</strong>
+    <%= team.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= team.description %>
+  </p>
+
+  <p>
+    <% if team.employee.count > 0  %>
+      <strong>Employees:</strong>
+         <% team.employee.each do |e| %>
+              <%= e.name  %><span>, </span>     
+        <% end %> 
+    <% end %>  
+  </p>
+
+ <p>
+    <strong>Division:</strong>
+    <%= team.division.name %>
+  </p>
+
+  <p>
+    <strong>Team lead:</strong>
+    <%= team.team_lead %>
+  </p>
+
+</div>

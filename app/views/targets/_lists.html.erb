@@ -1,0 +1,11 @@
+<p>----------------</p>
+<h4>List of teams</h4>
+<div>
+  <ul>
+    <% @teams.each do |team| %>
+        <li>
+          <%= team.id %><span> </span><%= team.name %>
+        </li>
+      <% end %>
+   </ul>
+</div>

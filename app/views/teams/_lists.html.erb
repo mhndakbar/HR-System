@@ -1,0 +1,11 @@
+<p>----------------</p>
+<h4>List of divisions</h4>
+<div>
+  <ul>
+    <% @divisions.each do |division| %>
+        <li>
+          <%= division.id %><span> </span><%= division.name %>
+        </li>
+      <% end %>
+   </ul>
+</div>

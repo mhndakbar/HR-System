@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_16_135904) do
+ActiveRecord::Schema.define(version: 2022_02_24_083449) do
 
   create_table "divisions", force: :cascade do |t|
     t.string "name"
@@ -63,6 +63,11 @@ ActiveRecord::Schema.define(version: 2022_02_16_135904) do
     t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at", precision: 6
+    t.datetime "remember_created_at", precision: 6
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

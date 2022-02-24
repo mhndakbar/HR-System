@@ -1,24 +1,28 @@
-# README
+# Amazon Clone 
+> This project is part of Sprints Backend bootcamp.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Tools :-
+- RoR
+- Mailhog
+- Active storage for uploads
+- Devise for authentication 
 
-Things you may want to cover:
+## Functions :-
+- Send welcome email to each new user.
+- Upload profile pic
+- User authentication
+- Show teams details
 
-* Ruby version
+## Screenshots :-
 
-* System dependencies
+### Teams
+<img src="/screenshots/teams.png" alt="att" width="200"/>
 
-* Configuration
+### Mailer
+<img src="/screenshots/mailer.png" alt="att" width="200"/>
 
-* Database creation
+### Attachments
+<img src="/screenshots/pic.png" alt="att" width="200"/>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Authentication
+<img src="/Screenshots/auth.png" alt="att" width="200"/>

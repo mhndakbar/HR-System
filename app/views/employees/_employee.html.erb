@@ -24,13 +24,17 @@
   </p>
 
   <p>
-    <strong>Team:</strong>
-    <%= employee.team.name %>
+  <% if employee.team.present? %>
+      <strong>Team:</strong>
+      <%= employee.team.name %>
+    <% end %>
   </p>
 
   <p>
-    <strong>Division:</strong>
-    <%= employee.division.name %>
+  <% if employee.division.present? %>
+      <strong>Division:</strong>
+      <%= employee.division.name %>
+    <% end %>
   </p>
 
 </div>

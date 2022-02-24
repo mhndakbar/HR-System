@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :manager, style: "display: block" %>
-    <%= form.text_field :manager %>
+    <%= form.select :employee_id, Employee.all.collect{ |employee| [" #{employee.name}",employee.id] }, prompt: "Choose one.." %>
   </div>
 
   <div>

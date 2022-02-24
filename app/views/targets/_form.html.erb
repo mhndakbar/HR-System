@@ -38,7 +38,7 @@
 
 <div>
    <%= form.label :team_id %>
-   <%= form.select :team_id, options_for_select(teamsIds), prompt: 'Choose one...' %>
+   <%= form.select :team_id, Team.all.collect{ |team| ["#{team.name}",team.id] }, prompt: 'Choose one...' %>
  </div>
 
   <div>

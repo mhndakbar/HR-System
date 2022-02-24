@@ -11,7 +11,7 @@
 
   <p>
     <% if team.employee.count > 0  %>
-      <strong>Employees:</strong>
+      <strong>Members:</strong>
          <% team.employee.each do |e| %>
               <%= e.name  %><span>, </span>     
         <% end %> 
@@ -24,8 +24,10 @@
   </p>
 
   <p>
-    <strong>Team lead:</strong>
-    <%= team.team_lead %>
+  <% if team.team_lead.present? %>
+      <strong>Team lead:</strong>
+      <%= team.team_lead %>
+    <% end %>
   </p>
 
 </div>

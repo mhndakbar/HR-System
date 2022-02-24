@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_07_064110) do
+ActiveRecord::Schema.define(version: 2022_02_16_135904) do
 
   create_table "divisions", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "manager"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "employee_id"
+    t.index ["employee_id"], name: "index_divisions_on_employee_id"
   end
 
   create_table "employees", force: :cascade do |t|

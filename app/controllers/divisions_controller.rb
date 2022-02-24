@@ -49,8 +49,14 @@ class DivisionsController < ApplicationController
 
   # DELETE /divisions/1 or /divisions/1.json
   def destroy
-    @division.destroy
+    if @division.team.present? 
+      @division.team.each do |t|
+        Team.destroy(t.id)
+      end
+    end
 
+    @division.destroy
+    
     respond_to do |format|
       format.html { redirect_to divisions_url, notice: "Division was successfully destroyed." }
       format.json { head :no_content }
@@ -65,6 +71,6 @@ class DivisionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def division_params
-      params.require(:division).permit(:name, :description, :manager)
+      params.require(:division).permit(:name, :description, :employee_id)
     end
 end

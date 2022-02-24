@@ -1,4 +1,9 @@
 <div id="<%= dom_id user %>">
+
+<% if user.pic.present? %> 
+  <%= image_tag user.pic , size:"300x200"%>
+<%end%>
+
   <p>
     <strong>Email:</strong>
     <%= user.email %>

@@ -31,3 +31,12 @@
 
 en:
   hello: "Hello world"
+  HR Adminstration System: "HR Adminstration System"
+  Sign in: "Sign in"
+  Sign out: "Sign out"
+  Sign up: "Sign up"
+  Employees: "Employees"
+  Divisions: "Divisions"
+  Teams: "Teams"
+  Targets: "Targets"
+  Users: "Users"

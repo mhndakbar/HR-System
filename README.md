@@ -26,8 +26,8 @@
 <img src="/screenshots/pic.png" alt="att" width="200"/>
 
 ### Authentication
-<img src="/Screenshots/auth.png" alt="att" width="200"/>
+<img src="/screenshots/auth.png" alt="att" width="200"/>
 
 ### Arabic Translation
-<img src="/Screenshots/tr.png" alt="att" width="200"/>
-<img src="/Screenshots/tr1.png" alt="att" width="200"/>
+<img src="/screenshots/tr.png" alt="att" width="200"/>
+<img src="/screenshots/tr2.png" alt="att" width="200"/>

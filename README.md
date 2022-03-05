@@ -12,6 +12,7 @@
 - Upload profile pic
 - User authentication
 - Show teams details
+- Arabic translation
 
 ## Screenshots :-
 
@@ -26,3 +27,7 @@
 
 ### Authentication
 <img src="/Screenshots/auth.png" alt="att" width="200"/>
+
+### Arabic Translation
+<img src="/Screenshots/tr.png" alt="att" width="200"/>
+<img src="/Screenshots/tr1.png" alt="att" width="200"/>

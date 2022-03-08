@@ -11,8 +11,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/topnav" %>
+    <div class="app_container">
+      <%= render "layouts/sidenav" %>
+      <div class="tableContent">
+          <%= yield %>
+      </div>
+      
+    </div>
      <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+    <%= render "layouts/footer" %>
   </body>
 </html>

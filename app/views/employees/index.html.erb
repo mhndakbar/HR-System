@@ -1,16 +1,52 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= t 'Employees', default: 'not exist'  %></h1>
+<h1>Employees</h1>
 
-<div id="employees">
-  <% @employees.each do |employee| %>
-    <%= render employee %>
-    <p>
-      <%= link_to "Show this employee", employee %>
-    </p>
-  <% end %>
+<div class="newbtn">
+<%= link_to "New employee", new_employee_path %>
 </div>
 
-<%= link_to "New employee", new_employee_path %>
+
+<div id="employees">
+<table class="table">
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Job</th>
+    <th>Salary</th>
+    <th>Team</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+<tbody>
+
+  <% @employees.each do |employee| %>
+  <tr>
+    <td><%= employee.id%></td>
+    <td><%= employee.name%></td>
+    <td><%= employee.email%></td>
+    <td><%= employee.job%></td>
+    <td><%= employee.salary%></td>
+    <% if employee.team.present? == true %>
+     <td><%= employee.team.name %></td>
+    <% end %>
+    <% if employee.team.present? == false %>
+     <td><%=  %></td>
+    <% end %>
+    <td><%= employee.employment_status %></td>
+    <td class="actions">
+      <%= link_to "Edit", edit_employee_path(employee) %> 
+      <%= button_to "Delete", employee, method: :delete %>
+    </td>
+  </tr>
+  <% end %>
+    </thead>
+  </table>
+</div>
+<br>
+
+
 <br>
 <%= link_to "Back to home", "/" %>

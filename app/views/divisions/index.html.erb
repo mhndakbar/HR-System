@@ -2,15 +2,48 @@
 
 <h1>Divisions</h1>
 
-<div id="divisions">
-  <% @divisions.each do |division| %>
-    <%= render division %>
-    <p>
-      <%= link_to "Show this division", division %>
-    </p>
-  <% end %>
+<div class="newbtn">
+<%= link_to "New division", new_division_path %>
 </div>
 
-<%= link_to "New division", new_division_path %>
+<div id="divisions">
+<table class="table">
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Teams</th>
+    <th>Manager</th>
+    <th>Action</th>
+  </tr>
+<tbody>
+
+  <% @divisions.each do |division| %>
+  <tr>
+    <td><%= division.id%></td>
+    <td><%= division.name%></td>
+    <td><%= division.description%></td>
+    <% if division.team.count > 0 %>
+     <td>
+        <% division.team.each do |team| %>
+              <%= team.name  %><span>, </span>
+        <% end %> 
+      </td>
+    <%end%> 
+    <% if division.employee.present? %>
+      <td><%= division.employee.name%></td>
+    <%end%>  
+    <td class="actions">
+      <%= link_to "Edit", edit_division_path(division) %> 
+      <%= button_to "Delete", division, method: :delete %>
+    </td>
+  </tr>
+  <% end %>
+    </thead>
+  </table>
+</div>
+
+
 <br>
 <%= link_to "Back to home", "/" %>

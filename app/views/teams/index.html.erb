@@ -2,15 +2,48 @@
 
 <h1>Teams</h1>
 
-<div id="teams">
-  <% @teams.each do |team| %>
-    <%= render team %>
-    <p>
-      <%= link_to "Show this team", team %>
-    </p>
-  <% end %>
+<div class="newbtn">
+<%= link_to "New team", new_team_path %>
 </div>
 
-<%= link_to "New team", new_team_path %>
+<div id="teams">
+<table class="table">
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Members</th>
+    <th>Leader</th>
+    <th>Action</th>
+  </tr>
+<tbody>
+
+  <% @teams.each do |team| %>
+  <tr>
+    <td><%= team.id%></td>
+    <td><%= team.name%></td>
+    <td><%= team.description%></td>
+    <% if team.employee.count > 0 %>
+     <td>
+        <% team.employee.each do |employee| %>
+              <%= employee.name  %><span>, </span>
+        <% end %> 
+      </td>
+    <%end%> 
+    <% if team.team_lead.present? %>
+      <td><%= team.team_lead%></td>
+    <%end%>  
+    <td class="actions">
+      <%= link_to "Edit", edit_team_path(team) %> 
+      <%= button_to "Delete", team, method: :delete %>
+    </td>
+  </tr>
+  <% end %>
+    </thead>
+  </table>
+</div>
+
+
 <br>
 <%= link_to "Back to home", "/" %>

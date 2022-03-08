@@ -1,15 +1,12 @@
+<div>
 <h1><%= t 'HR Adminstration System', default: 'not exist' %></h1>
 
+
 <ul>
-    <li><%= t 'Sign in', default: 'not exist' %></li>
-    <li><%= t 'Sign out', default: 'not exist' %></li>
+    <li><%= link_to  (t("Sign in")), new_user_session_url %></li>
+    <li><%= link_to  (t("Sign out")), destroy_user_session_path %></li>
     <li><%= link_to  (t("Sign up")), new_user_registration_path %></li>
 </ul>
 
 
-<a href="employees"><%= t 'Employees', default: 'not exist'  %><br/> </a>
-<a href="divisions"><%= t 'Divisions', default: 'not exist'  %><br/>   </a>
-<a href="teams"><%= t 'Teams', default: 'not exist'  %><br/>   </a>
-<a href="targets"><%= t 'Targets', default: 'not exist'  %><br/>   </a>
-<a href="users"><%= t 'Users', default: 'not exist'  %><br/>   </a>
-
+</div>

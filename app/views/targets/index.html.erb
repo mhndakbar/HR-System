@@ -2,15 +2,46 @@
 
 <h1>Targets</h1>
 
-<div id="targets">
-  <% @targets.each do |target| %>
-    <%= render target %>
-    <p>
-      <%= link_to "Show this target", target %>
-    </p>
-  <% end %>
+<div class="newbtn">
+<%= link_to "New target", new_target_path %>
 </div>
 
-<%= link_to "New target", new_target_path %>
+<br>
+<br>
+<div id="targets">
+<table class="table">
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Team</th>
+    <th>Start Date</th>
+    <th>Finish Date</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+<tbody>
+
+  <% @targets.each do |target| %>
+  <tr>
+    <td><%= target.id%></td>
+    <td><%= target.title%></td>
+    <td><%= target.description%></td>
+    <td><%= target.team.name %></td>
+    <td><%= target.start_date %></td>
+    <td><%= target.finish_date %></td>
+    <td><%= target.status %></td>
+    <td class="actions">
+      <%= link_to "Edit", edit_target_path(target) %> 
+      <%= button_to "Delete", target, method: :delete %>
+    </td>
+  </tr>
+  <% end %>
+    </thead>
+  </table>
+</div>
+
+
 <br>
 <%= link_to "Back to home", "/" %>

@@ -31,7 +31,26 @@
    <%= form.select :division_id, Division.all.collect{ |division| [" #{division.name}",division.id] }, prompt: 'Choose one...' %>
  </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+ <%= form_with model: @team do|form|%>  
+  Targets:
+  <ul>
+    <%= form.fields_for :target do |target_form| %>
+      <li>
+        <%= target_form.label :title, style: "display: block" %>
+        <%= target_form.text_field :title %>
+        <%= target_form.label :description, style: "display: block" %>
+        <%= target_form.text_area :description %>
+        <%= target_form.label :start_date, style: "display: block" %>
+        <%= target_form.date_field :start_date %>
+        <%= target_form.label :finish_date, style: "display: block" %>
+        <%= target_form.date_field :finish_date %>
+        <%= target_form.label :status, style: "display: block" %>
+        <%= target_form.text_field :status %>
+      </li>
+      <div>
+       <%= target_form.submit %>
+     </div>
+    <%end%>
+  </ul>
+ <%end%>
 <% end %>

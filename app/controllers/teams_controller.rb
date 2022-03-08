@@ -13,6 +13,7 @@ class TeamsController < ApplicationController
   # GET /teams/new
   def new
     @team = Team.new
+    1.times { @team.target.build }
     @divisionsIds = get_divisions_ids()
   end
 
@@ -73,7 +74,7 @@ class TeamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def team_params
-      params.require(:team).permit(:name, :description, :team_lead, :division_id)
+      params.require(:team).permit(:name, :description, :team_lead, :division_id, target_attributes: [:id, :title, :description, :start_date, :finish_date, :status, :team_id])
     end
 
     def get_divisions_ids

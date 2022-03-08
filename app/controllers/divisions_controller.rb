@@ -13,6 +13,7 @@ class DivisionsController < ApplicationController
   # GET /divisions/new
   def new
     @division = Division.new
+    1.times { @division.team.build }
   end
 
   # GET /divisions/1/edit
@@ -71,6 +72,6 @@ class DivisionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def division_params
-      params.require(:division).permit(:name, :description, :employee_id)
+      params.require(:division).permit(:name, :description, :employee_id, team_attributes: [:id, :name, :description, :team_lead, :division_id])
     end
 end

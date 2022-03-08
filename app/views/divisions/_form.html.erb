@@ -26,7 +26,24 @@
     <%= form.select :employee_id, Employee.all.collect{ |employee| [" #{employee.name}",employee.id] }, prompt: "Choose one.." %>
   </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+<%= form_with model: @division do|form|%>  
+  Teams:
+  <ul>
+    <%= form.fields_for :team do |team_form| %>
+      <li>
+        <%= team_form.label :name, style: "display: block" %>
+        <%= team_form.text_field :name %>
+        <%= team_form.label :description, style: "display: block" %>
+        <%= team_form.text_area :description %>
+        <%= team_form.label :team_lead, style: "display: block" %>
+        <%= team_form.select :team_lead, Employee.all.collect{ |employee| ["#{employee.name}",employee.name] }, prompt: 'Choose one...' %>
+        </li>
+      <div>
+       <%= team_form.submit %>
+     </div>
+    <%end%>
+  </ul>
+ <%end%>
+
+
 <% end %>

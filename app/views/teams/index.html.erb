@@ -30,7 +30,9 @@
               <%= employee.name  %><span>, </span>
         <% end %> 
       </td>
-    <%end%> 
+    <%else%> 
+      <td><%= %></td>
+    <%end%>
     <% if team.team_lead.present? %>
       <td><%= team.team_lead%></td>
     <%end%>  

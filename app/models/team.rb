@@ -6,4 +6,6 @@ class Team < ApplicationRecord
     validates :name, presence: true
     validates :description, presence: true
     validates :team_lead, presence: true
+
+    accepts_nested_attributes_for :target
 end

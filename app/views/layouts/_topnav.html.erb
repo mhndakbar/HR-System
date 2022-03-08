@@ -1,0 +1,12 @@
+<div class="topnav">
+    <a href="#">HR Admin Platform</a>
+    <div class="links">
+        <% if current_user.present? %>
+        <a href="#"><%= current_user.name %></a>
+        <%= link_to  (t("Sign out")), destroy_user_session_path %>
+        <%end%>
+        <% if current_user.to_s.blank? %>
+        <%= link_to  (t("Sign in")), new_user_session_url %>
+        <%end%>
+    </div>
+</div>

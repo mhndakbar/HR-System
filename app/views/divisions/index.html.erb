@@ -2,13 +2,15 @@
 
 <h1>Divisions</h1>
 
-<div class="newbtn">
+<div class="btn btn-info newbtn">
 <%= link_to "New division", new_division_path %>
 </div>
 
+<br>
+<br>
 <div id="divisions">
-<table class="table">
-<thead>
+<table class="table table-striped">
+<thead class="thead-dark">
   <tr>
     <th>Id</th>
     <th>Name</th>
@@ -46,4 +48,6 @@
 
 
 <br>
+<div class="btn">
 <%= link_to "Back to home", "/" %>
+</div>
